@@ -1,0 +1,60 @@
+.world-map {
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: whitesmoke;
+}
+
+
+.country-list {
+    width: 100%;
+    list-style-type: none;
+    column-count: 3;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    background-color: #FAFAFA;
+    padding: 30px;
+    font-size: 24px;
+    margin: 0;
+}
+
+.flag {
+    width: 20px;
+    margin: 0 10px 0 0;
+}
+
+.population {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+}
+
+/*-----------------///Country colors///---------------------*/
+
+.africa {
+    color: blue;
+}
+
+.americas {
+    color: green;
+}
+
+.asia {
+    color: red;
+}
+
+.europe {
+    color: #FDE541;
+}
+
+.oceania {
+    color: purple;
+}
+
+.default {
+    color: grey;
+}
