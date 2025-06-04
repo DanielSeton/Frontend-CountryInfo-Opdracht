@@ -2,14 +2,13 @@ import './App.css';
 import axios from "axios";
 import {useState} from "react";
 import worldMap from './assets/world_map.png';
-import CountryBlock from "./components/countryBlock/CountryBlock.jsx";
 import {setColor} from "./helpers/setColor.js";
+import {formatPopulation} from "./helpers/formatPopulation.js";
 
 function App() {
 
     const[countries, setCountries] = useState("");
-    const [countryAmount, setCountryAmount] = useState("");
-    const [countryRegion, setCountryRegion] = useState("");
+    const[searchCountry, setSearchCountry] = useState('');
 
     async function getCountries(){
         try {
@@ -21,11 +20,22 @@ function App() {
             });
 
             setCountries(result.data);
-            setCountryAmount(result.data[0].population);
-            setCountryRegion(result.data[0].region);
         } catch (error) {
             console.error(error);
         }
+    }
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
+        try {
+            const query = await axios.get('https://restcountries.com/v3.1/name/netherlands')
+            console.log(query.data[0]);
+            setSearchCountry(query.data[0]);
+        } catch (error) {
+            console.error(error);
+        }
+
     }
 
     return (
@@ -49,6 +59,33 @@ function App() {
                             })}
                         </ul> : <button className="country-button" onClick={getCountries}>Klik mij!</button>
                     }
+                </section>
+                <section className="search-container">
+                    <h2>Search country information</h2>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="Vul iets in"
+                            value={searchCountry}
+                            onChange={(e) => setSearchCountry(e.target.value)}>
+                        </input>
+                        <button type="Submit">Search</button>
+                    </form>
+                    {/*{Object.keys(searchCountry).length > 0 &&*/}
+                    {/*    <article className="country-list">*/}
+                    {/*        <span>*/}
+                    {/*            <img src={searchCountry.flags.svg} alt={`Vlag van ${searchCountry.name.common}`} className="flag"/>*/}
+                    {/*            <h2>*/}
+                    {/*                {searchCountry.name.common}*/}
+                    {/*            </h2>*/}
+                    {/*        </span>*/}
+                    {/*        <p>*/}
+                    {/*            {searchCountry.name.common} is situated in {searchCountry.subregion} and the capital is [searchCountry.capital[0]]*/}
+                    {/*            It has a population of {formatPopulation(searchCountry.population)} million people and it borders with {searchCountry.borders.length} neighboring countries*/}
+                    {/*            Websites can be found on <code>{searchCountry.tld[0]}</code> domain's*/}
+                    {/*        </p>*/}
+                    {/*    </article>*/}
+                    {/*}*/}
                 </section>
             </main>
         </>

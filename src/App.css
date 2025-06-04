@@ -10,6 +10,22 @@
     background-color: whitesmoke;
 }
 
+h1{
+    text-align: center;
+}
+
+.country-button{
+
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------///Country blocks///---------------------*/
 
 .country-list {
     width: 100%;
