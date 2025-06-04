@@ -1,0 +1,144 @@
+.world-map {
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: whitesmoke;
+}
+
+h1{
+    text-align: center;
+}
+
+.country-button{
+
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+/*-----------------///Country blocks///---------------------*/
+
+.country-list {
+    width: 100%;
+    list-style-type: none;
+    column-count: 3;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    background-color: #FAFAFA;
+    padding: 30px;
+    font-size: 24px;
+    margin: 0;
+}
+
+.flag {
+    width: 20px;
+    margin: 0 10px 0 0;
+}
+
+.population {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+}
+
+/*-----------------///Country colors///---------------------*/
+
+.africa {
+    color: blue;
+}
+
+.americas {
+    color: green;
+}
+
+.asia {
+    color: red;
+}
+
+.europe {
+    color: #FDE541;
+}
+
+.oceania {
+    color: purple;
+}
+
+.default {
+    color: grey;
+}
+
+/*-----------------///Opdracht 2///---------------------*/
+
+.search-form {
+    margin: 0 auto;
+}
+
+.search-form button {
+    text-transform: uppercase;
+    background-color: #A7D160;
+    border: 1px solid #A7D160;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 16px;
+    color: #292929;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-form input {
+    border: 1px solid gray;
+    border-right-color: transparent;
+    margin-right: -4px;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 8px;
+    border-radius: 8px 0 0 8px;
+    width: 300px;
+    font-size: 16px;
+}
+
+.search-result-box {
+    border-radius: 8px;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin: 72px 0;
+}
+
+.search-result-box h2 {
+    font-size: 36px;
+    padding: 0 0 12px 0;
+}
+
+.search-result-box p {
+    padding: 8px 0;
+}
+
+.search-flag {
+    width: 40px;
+    margin-right: 16px;
+}
+
+.flag-title-container {
+    border-bottom: 1px solid #ededed;
+    display: flex;
+    align-items: baseline;
+    margin: 0 0 12px 0;
+}
+
+.error-message {
+    padding: 16px 0;
+    color: indianred;
+    border-radius: 8px;
+}
+
+code {
+    font-family: 'menlo', monospace;
+}
